@@ -1,0 +1,185 @@
+
+.header__container {
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    transition-duration: 0.5s;
+}
+
+.header__container.sticky {
+    background-color: #0B1D26;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__logo a{
+   color: $white;
+   @include font(32px,700,normal);
+letter-spacing: 0.32px;
+}
+.header__body{
+    display: flex;
+    justify-content: center;}
+.header__list{
+    display: flex;
+    gap:50px;
+}
+.header__lip{
+    display: none;
+}
+.burger {
+    display: none; /* Приховуємо бургер-меню за замовчуванням */
+}
+.burger-line {
+    @include box(40px,30px);
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 6px 0;
+    display: block;
+    transition: 0.4s;
+}
+/* Стилі для меню при ширині екрану менше 900px */
+@media (max-width: 900px) {
+    .burger {
+        display: block; /* Показуємо бургер-меню при виконанні умови медіазапиту */
+        position: relative;
+        @include box(30px,30px);
+        background-color: rgba(255, 255, 255, 0.05);
+        transform: translate(0, 5px);
+        color: $white;
+       }
+       .header__lip{
+        display: flex;
+       }
+       .burger-line{
+        position: absolute;
+        @include box(100%,2px);
+        top: 50%;
+        left:0;
+        background-color: currentColor;
+        transition-duration: 0.4s;
+       }
+       .burger::before,
+       .burger::after{
+        content: '';
+        position: absolute;
+        @include box(100%,2px);
+        top: 0;
+        transform: translateX(-50%);
+        transition-duration: 0.4s;
+        background-color: currentColor;
+       }
+       .burger::before{
+        top: 0;
+       }
+       .burger::after{
+        top:10px;
+       }
+    
+       
+       .burger.is-active .burger-line{
+        transform: scale(0);
+       background-color: #f50808;
+    transition-duration: 0.5s;
+       }
+       .burger.is-active::before{
+        transform: rotate(-50deg);
+        top: 50%;
+        transition-duration: 0.5s;
+       }
+       .burger.is-active::after{
+        transform: rotate(50deg);
+        top: 50%;
+        transition-duration: 0.5s;
+       }
+
+    /* Додаткові стилі для прихованого меню */
+    .header__list {
+        align-items:center;
+    flex-direction: column;
+    padding: 16px 0 16px 16px;
+position: absolute;
+right: 70;
+top: 0; /* Позиціонуємо блок відносно верху сторінки */
+background-color:#000;
+width: 255px;
+opacity: 0;
+transform: translateX(200%);
+    }
+    .header__list.open{
+            opacity: 1;
+            transform: translate(-100px,120px);
+    }
+    .header__b0x{
+        display: flex;
+        align-items: center;
+        border-radius: 30%;
+        background-color:green;
+        border: 1px solid #0B1D26;
+        padding: 5px ;
+        gap: 10px;
+    }
+    .header__b0x:focus{
+        background-color: $yellow;
+        transition-duration: 0.5s;
+    }
+.header__nav {
+    display: none;
+}
+.header__lip{
+    display: flex;
+    margin-left: 10px;
+   }
+   .header__lip a{
+    color: $white;
+    @include font(18px,700,normal);
+display: flex;
+align-items: center;
+}
+.header__lip:focus a,
+.header__lip:focus a{
+    color: $yellow;
+    transition-duration: 0.5s;
+}
+
+.header__lip svg {
+    margin-right: 5px;
+}
+}
+.header__item:hover a ,
+.header__item:focus a {
+    color: $blue;
+    transition-duration: 1s;
+    transform:matrix3d(50deg);
+
+}
+.header__item a{
+    color: $white;
+    @include font(18px,700,normal);
+line-height: normal;
+}
+.header__nav a{
+    color: $white;
+    @include font(18px,700,normal);
+line-height: normal;
+}
+.header__nav:hover a,
+.header__nav:focus a{
+    color: $blue;
+    transition-duration: 1s;
+    transform:matrix3d(50deg);
+
+}
+.header__nav a {
+    display: flex;
+    align-items: center;
+}
+
+.header__nav svg {
+    margin-right: 5px;
+}

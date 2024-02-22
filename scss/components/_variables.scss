@@ -1,0 +1,58 @@
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+html,
+body{
+    font-family: 'DM Sans', sans-serif;
+    min-width: 320px;
+    height: 100%;
+    font-family: "Gilroy";
+}
+[class*="__container"]{
+    max-width: 1500px;
+    margin:0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+
+}
+.wrapper{
+    background:  #0B1D26;
+    min-height: 100%;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+   
+}
+.page{
+    flex:1 1 auto;
+   
+    
+}
+h1,h2,h3,h4,h5,h6,a,li,ul{
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    color: inherit;
+}
+img{
+    display:inline-block;
+    vertical-align: top;
+}
+button{
+    line-height: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+    color: inherit;
+    background-color:transparent;
+}
